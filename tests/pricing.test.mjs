@@ -12,8 +12,9 @@ test('pricing contains the three agreed base amounts', () => {
 });
 
 test('medication is charged by cat and by visit; nail trim per session', () => {
-  assert.match(source, /10 \* cats \* visits/);
-  assert.match(source, /15 \* cats/);
+  assert.match(source, /medication: 10, nails: 15/);
+  assert.match(source, /extraPrices\.medication \* cats \* visits/);
+  assert.match(source, /extraPrices\.nails \* cats/);
 });
 
 test('multi-cat visits require final price confirmation', () => {

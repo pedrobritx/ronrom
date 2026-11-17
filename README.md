@@ -2,7 +2,7 @@
 
 Site mobile-first para um serviço de cat sitting domiciliar na Asa Norte, Brasília (DF).
 
-**Estado:** projeto em desenvolvimento. Nenhum formulário público, reserva automática ou integração de pagamentos está ativo.
+**Estado:** projeto em desenvolvimento. O formulário prepara uma solicitação para WhatsApp. A integração de cobrança começa com rascunhos manuais no ambiente de teste.
 
 ## Visão
 
@@ -33,4 +33,4 @@ Uma página narrativa e acessível em que o mascote Salem explora uma parede gat
 3. Configuração de WhatsApp Business compartilhado e fluxo de solicitações.
 4. Agenda privada e automação de solicitações pendentes.
 5. Publicação após validar políticas, privacidade e informações de contato.
-6. Pagamentos online (opcional, fase posterior).
+6. Cobranças no Stripe e conciliação via webhook. Veja [Stripe na Ronrom](docs/STRIPE.md) para testar a primeira etapa.

@@ -1,6 +1,8 @@
 export type PlanId = 'essencial' | 'companhia' | 'premium';
 export type ExtraId = 'medication' | 'nails' | 'treat';
 
+export const extraPrices = { medication: 10, nails: 15, treat: 8 };
+
 export const plans = [
   {
     id: 'essencial' as const,
@@ -42,9 +44,9 @@ export function estimate(input: EstimateInput) {
   const visits = Math.max(1, Math.floor(input.visits) || 1);
   const cats = Math.max(1, Math.floor(input.cats) || 1);
   const base = plan.price * visits;
-  const medication = input.medication ? 10 * cats * visits : 0;
-  const nails = input.nails ? 15 * cats : 0; // uma sessão por gato no período solicitado
-  const treat = input.treat && input.plan !== 'premium' ? 8 * visits : 0;
+  const medication = input.medication ? extraPrices.medication * cats * visits : 0;
+  const nails = input.nails ? extraPrices.nails * cats : 0; // uma sessão por gato no período solicitado
+  const treat = input.treat && input.plan !== 'premium' ? extraPrices.treat * visits : 0;
   return {
     base,
     medication,
